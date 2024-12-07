@@ -25,13 +25,13 @@ export default async function Home() {
 const ultimaNoticia = noticias[0]
 
   return (
-    <main className="container px-8 flex-1">
+    <main className="container sm:px-6 lg:px-8 max-w-screen-xl flex-1">
       <Wellcome />  
-      <div className="mt-6">
-        
+      <div className="mt-6">        
         <CardIndex noticia={ultimaNoticia} />
       </div>
       <CategoryNav categorias={categorias} />      
+      <h2 style={{fontSize: '20px', fontWeight: 'bold'}}>Últimas Notícias</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {noticias.map((noticia) => (
           <NewsCard key={noticia.id} noticia={noticia} />

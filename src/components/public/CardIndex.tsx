@@ -1,4 +1,3 @@
-// components/NoticiaCard.tsx
 import Link from 'next/link'
 import { formatDate } from '@/utils/format'
 import type { Noticia, Categoria, Usuario } from '@prisma/client'
@@ -6,20 +5,21 @@ import type { Noticia, Categoria, Usuario } from '@prisma/client'
 type NoticiaPrincipal = Noticia & {
   categoria: Categoria
   autor: Usuario
-  id: Int
+  id: Noticia
 }
 
 export default function CardPrincipal({noticia}: {noticia: NoticiaPrincipal}) {
   return (
-    <div className="rounded-lg shadow-xl max-w-screen-lg mx-auto mb-6 overflow-hidden flex flex-col">
-    <div className='flex'>    
+    <div className="max-w-screen-xl mx-auto mb-6 overflow-hidden flex flex-col">
+    <div className='flex justify-around'>    
+    <div className='rounded-lg overflow-hidden'>
     <img
       src={`https://picsum.photos/seed/${noticia.id}/200/200`}
       alt={noticia.titulo}
       className="w-64 h-64 object-cover"
     />
-  
-    <div className="p-4 flex flex-col justify-between w-1/2">
+    </div>
+    <div className="p-4 flex flex-col justify-between w-1/4">
 
       <div className="text-sm text-gray-600">
         <div className="flex items-center mb-2">

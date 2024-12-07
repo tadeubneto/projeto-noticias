@@ -35,16 +35,14 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="h-screen flex items-center justify-center">
       <form onSubmit={onSubmit} className="space-y-4 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center">Login</h1>
-        
+        <h1 className="text-2xl font-bold text-center">Login</h1>        
         {error && (
           <div className="bg-red-100 text-red-600 p-3 rounded">
             {error}
           </div>
         )}
-
         <div>
           <label htmlFor="email" className="block text-sm font-medium">
             Email
@@ -75,6 +73,7 @@ export default function LoginPage() {
         >
           Entrar
         </button>
+              {/* fazer o esqueci minha senha e o registrar  */}
       </form>
     </div>
   )
