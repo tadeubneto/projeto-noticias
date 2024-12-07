@@ -1,11 +1,22 @@
+'use client'
 
-import { prisma } from "@/lib/prisma"
-import { notFound } from "next/navigation"
+import { useSession } from "next-auth/react"
 
+export default function AdminPage() {
+  const { data: session, status } = useSession()
 
-export default async function Home() {
+  if (status === "loading") {
+    return <div>Carregando...</div> 
+  }
+
   
+
   return (
-    <h1>pagina admin</h1>
+    <div>
+      <h1>Seja bem-vindo novamente, <span className="font-bold">{session.user.name}!</span></h1>
+      <br />
+      <p>Utilize o menu ao lado para criar, editar ou excluir uma nova notícia ou categoria</p>
+      <p>Para sair, clique no botão <span className="font-bold text-red-500">SAIR</span> que fica no meunu lateral. </p>
+      </div>
   )
 }
