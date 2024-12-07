@@ -18,7 +18,7 @@ export default async function Home() {
   const categorias = await prisma.categoria.findMany()
 
   return (
-    <main className="container mx-auto px-4">
+    <main className="container px-4 flex-1 w-screen">
       <CategoryNav categorias={categorias} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
