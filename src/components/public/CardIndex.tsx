@@ -31,7 +31,7 @@ export default function CardPrincipal({noticia}: {noticia: NoticiaPrincipal}) {
         </div>
       </div>
       <div>
-        <span>{noticia.conteudo.slice(0, 20)}...</span>
+        <span>{noticia.conteudo.slice(0, 100)}...</span>
       </div>  
 
       <Link href={`/noticia/${noticia.id}`} className="text-xl font-semibold hover:text-blue-600">
