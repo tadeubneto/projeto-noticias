@@ -20,8 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" >
-      <body className={`inter.className flex flex-col items-center justify-between h-screen w-screen`}>
-        
+      <body className={`inter.className flex flex-col items-center justify-between h-screen`}>
         <Header />
         <AuthProvider>
             {children}    

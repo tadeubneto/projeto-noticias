@@ -2,6 +2,10 @@
 import { prisma } from "@/lib/prisma"
 import NewsCard from "@/components/public/NewsCard"
 import CategoryNav from "@/components/public/CategoryNav"
+import Wellcome from "@/components/public/WellcomeCont"
+import CardIndex from "@/components/public/CardIndex"
+import { notFound } from "next/navigation"
+
 
 export default async function Home() {
   const noticias = await prisma.noticia.findMany({
@@ -17,10 +21,17 @@ export default async function Home() {
 
   const categorias = await prisma.categoria.findMany()
 
+  
+const ultimaNoticia = noticias[0]
+
   return (
-    <main className="container px-4 flex-1 w-screen">
-      <CategoryNav categorias={categorias} />
-      
+    <main className="container px-8 flex-1">
+      <Wellcome />  
+      <div className="mt-6">
+        
+        <CardIndex noticia={ultimaNoticia} />
+      </div>
+      <CategoryNav categorias={categorias} />      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {noticias.map((noticia) => (
           <NewsCard key={noticia.id} noticia={noticia} />
