@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Site de Notícias - Projeto
 
-## Getting Started
+Este é um projeto de um **site de notícias** desenvolvido com **React**, **Next.js** e **Prisma**. O sistema permite adicionar e gerenciar notícias, categorias, e possui um sistema de login para administradores.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Adição de Notícias**: O administrador pode adicionar, editar e remover notícias.
+- **Categorias**: É possível categorizar as notícias para facilitar a navegação, criando novas categorias.
+- **Login para Administrador**: Sistema de autenticação para administradores, garantindo que apenas usuários autorizados possam gerenciar o conteúdo.
+- **Exibição de Notícias**: As notícias são exibidas na interface para os usuários de forma dinâmica e organizada.
+- **Banco de Dados com Prisma**: Utiliza o Prisma como ORM para a manipulação e consulta de dados no banco de dados.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologias Usadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **React**: Biblioteca JavaScript para a construção da interface do usuário.
+- **Next.js**: Framework React para a renderização do lado servidor (SSR) e geração de sites estáticos (SSG).
+- **Prisma**: ORM para interagir com o banco de dados de forma eficiente.
+- **Tailwind CSS** : Framework de CSS para estilização rápida e responsiva.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
