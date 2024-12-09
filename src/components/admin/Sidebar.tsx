@@ -15,23 +15,23 @@ export default function AdminSidebar() {
   ]
 
   return (
-    <aside className="w-64 bg-gray-800 text-white p-6">
+    <aside className="w-64 bg-red-500 text-gary-800 font-bold p-6">
       <nav className="space-y-4">
         {links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className={`block p-2 rounded ${
-              pathname === link.href ? "bg-gray-700" : ""
+            className={`block p-2 rounded hover:text-white ${
+              pathname === link.href ? "bg-red-200" : ""
             }`}
           >
             {link.label}
           </Link>
         ))}
 
-        <button
+        <button        
           onClick={() => signOut()}
-          className="w-full text-left p-2 text-red-400 hover:bg-gray-700 rounded"
+          className="w-full text-left p-2 text-white hover:bg-gray-300 rounded"
         >
           Sair
         </button>

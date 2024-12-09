@@ -12,15 +12,15 @@ export default function CardPrincipal({noticia}: {noticia: NoticiaPrincipal}) {
   return (
     <div className="max-w-screen-xl mx-auto mb-6 overflow-hidden flex flex-col">
     <div className='flex justify-around'>    
-    <div className='rounded-lg overflow-hidden'>
+    <div className='overflow-hidden'>
     <img
       src={`https://picsum.photos/seed/${noticia.id}/200/200`}
       alt={noticia.titulo}
-      className="w-64 h-64 object-cover"
+      className="w-60 h-60 object-content rounded-lg"
     />
     </div>
-    <div className="p-4 flex flex-col justify-between w-1/4">
 
+    <div className="p-4 flex flex-col justify-between w-1/3">
       <div className="text-sm text-gray-600">
         <div className="flex items-center mb-2">
           <span className="mr-2">{formatDate(noticia.dataPublicacao)}</span>
