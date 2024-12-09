@@ -1,12 +1,11 @@
 // app/admin/page.tsx
-import { getServerSession } from "next-auth"
-import { authConfig } from "../../auth.config"
+
 import { prisma } from "@/lib/prisma"
 import { Card } from "@/components/ui/card"
 
 
 export default async function AdminHome() {
- const session = await getServerSession(authConfig)
+ 
  
 
  const stats = await prisma.$transaction([

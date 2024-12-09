@@ -4,7 +4,7 @@ import NewsCard from "@/components/public/NewsCard"
 import CategoryNav from "@/components/public/CategoryNav"
 import Wellcome from "@/components/public/WellcomeCont"
 import CardIndex from "@/components/public/CardIndex"
-import { notFound } from "next/navigation"
+
 
 
 export default async function Home() {
@@ -22,10 +22,11 @@ export default async function Home() {
   const categorias = await prisma.categoria.findMany()
 
   
-const ultimaNoticia = noticias[0]
+  const ultimaNoticia = noticias[0]
+  
 
   return (
-    <main className="container sm:px-6 lg:px-8 max-w-screen-xl flex-1">
+    <main className="container sm:px-6 lg:px-8 xl:px-20 max-w-screen-xl flex-1 mb-6">
       <Wellcome />  
       <div className="mt-6">        
         <CardIndex noticia={ultimaNoticia} />

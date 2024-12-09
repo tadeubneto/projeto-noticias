@@ -4,6 +4,8 @@ import { redirect } from "next/navigation"
 import AdminSidebar from "@/components/admin/Sidebar"
 import { authConfig } from "@/auth.config"
 
+
+
 export default async function AdminLayout({
   children,
 }: {
@@ -17,7 +19,7 @@ export default async function AdminLayout({
 
   return (
     <div className="flex h-screen w-screen">
-      <AdminSidebar />
+      <AdminSidebar />     
       <main className="flex-1 p-8 ">{children}</main>
     </div>
   )
