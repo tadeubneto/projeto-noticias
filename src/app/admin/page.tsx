@@ -2,11 +2,17 @@
 
 import { prisma } from "@/lib/prisma"
 import { Card } from "@/components/ui/card"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+
+
+
 
 
 export default async function AdminHome() {
- 
- 
+const session = await getServerSession(authOptions) 
+
+console.log(session)
 
  const stats = await prisma.$transaction([
    prisma.noticia.count(),
@@ -20,9 +26,13 @@ export default async function AdminHome() {
 
  const [totalNoticias, totalCategorias, ultimasNoticias] = stats
 
+ const nomeUsuario = session?.user?.name || 'Usuário'
+
  return (
    <div className="space-y-6">
      <h1 className="text-3xl font-bold">Dashboard</h1>
+     <p>Bem vindo, <span className="font-bold">{nomeUsuario}</span>!</p>
+ 
      
      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
        <Card className="p-6">

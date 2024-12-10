@@ -4,6 +4,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { signOut } from "next-auth/react"
+import { LogOut } from "lucide-react"
 
 export default function AdminSidebar() {
   const pathname = usePathname()
@@ -28,11 +29,11 @@ export default function AdminSidebar() {
             {link.label}
           </Link>
         ))}
-
         <button        
           onClick={() => signOut()}
-          className="w-full text-left p-2 text-white hover:bg-gray-300 rounded"
+          className="w-full text-left p-2 text-white hover:bg-gray-500 rounded flex gap-2 items-center"
         >
+          <LogOut size={20} />
           Sair
         </button>
       </nav>
