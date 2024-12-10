@@ -9,6 +9,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 
 
 
+
 export default async function AdminHome() {
 const session = await getServerSession(authOptions) 
 
@@ -32,6 +33,7 @@ console.log(session)
    <div className="space-y-6">
      <h1 className="text-3xl font-bold">Dashboard</h1>
      <p>Bem vindo, <span className="font-bold">{nomeUsuario}</span>!</p>
+     
  
      
      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -42,6 +44,7 @@ console.log(session)
        
        <Card className="p-6">
          <h3 className="text-lg font-medium">Categorias</h3>
+        
          <p className="text-3xl font-bold mt-2">{totalCategorias}</p>
        </Card>
      </div>

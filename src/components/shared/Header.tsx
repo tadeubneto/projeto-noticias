@@ -3,7 +3,7 @@ import { Facebook, Instagram, User } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="bg-white border-b border-gray-200 w-full">
+    <header className="bg-white border-b border-gray-200 w-full ">
       <div className=" mx-auto sm:px-6 lg:px-8 max-w-screen-xl">
         <div className="flex justify-between  items-center h-16">
           <div className="flex items-center gap-5">

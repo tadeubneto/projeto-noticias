@@ -1,6 +1,7 @@
 
 'use client'
 
+import { Loading } from "@/components/shared/Loading"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -8,9 +9,11 @@ import { useState } from "react"
 export default function LoginPage() {
   const router = useRouter()
   const [error, setError] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    setIsLoading(true)
     const formData = new FormData(event.currentTarget)
     const email = formData.get("email")
     const password = formData.get("password")
@@ -31,6 +34,9 @@ export default function LoginPage() {
       router.refresh()
     } catch (error) {
       setError("Erro ao fazer login")
+    }finally {
+      setIsLoading(false)
+
     }
   }
 
@@ -69,9 +75,10 @@ export default function LoginPage() {
 
         <button
           type="submit"
+          isLoading={isLoading}
           className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-        >
-          Entrar
+        >{isLoading ? (<Loading />) : ('Entrar')}
+         
         </button>
               {/* fazer o esqueci minha senha e o registrar  */}
       </form>
